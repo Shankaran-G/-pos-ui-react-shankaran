@@ -20,8 +20,10 @@ function Dashboard() {
       <div className="flex-1 flex flex-col">
         <Topbar />
         <div className="p-4">
-          <Searchbar onRefresh={() => window.location.reload()} />
-          <ProductTable onEdit={handleEdit} />
+          <Searchbar />
+          <div className="mt-6">
+            <ProductTable />
+          </div>
         </div>
       </div>
     </div>
