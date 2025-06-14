@@ -36,7 +36,6 @@ const getStockBorderTextColor = (value) => {
 const ProductTable = ({ onEdit }) => (
   <div className="overflow-x-auto bg-white rounded shadow p-4 border-1 border-gray-300">
     <table className="min-w-full text-base text-left">
-      {" "}
       <thead>
         <tr className="bg-white font-bold">
           <th className="p-3 capitalize">Products</th>
@@ -45,7 +44,7 @@ const ProductTable = ({ onEdit }) => (
           <th className="p-3 capitalize">Category</th>
           <th className="p-3 capitalize">Tax</th>
           <th className="p-3 capitalize">Price</th>
-          <th className="p-3 capitalize pl-8">Store</th>{" "}
+          <th className="p-3 capitalize pl-8">Store</th>
           <th className="p-3 capitalize">Warehouse</th>
           <th className="p-3 capitalize">Action</th>
         </tr>
