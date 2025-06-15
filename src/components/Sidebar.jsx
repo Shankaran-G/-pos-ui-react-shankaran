@@ -40,7 +40,7 @@ const Sidebar = () => {
           <span className="font-semibold text-sm hidden md:inline">HOME</span>
         </button>
 
-        <ul className="flex flex-col space-y-3">
+        <ul className="flex flex-col space-y-1">
           {sections.map((item, index) => {
             const Icon = item.icon;
             const isActive = item.name === "Products";
@@ -68,7 +68,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="mt-auto flex flex-col space-y-2">
+      <div className="mt-auto flex flex-col space-y-1">
         {footer.map((item, index) => {
           const Icon = item.icon;
           return (
