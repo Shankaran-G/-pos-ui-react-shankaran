@@ -72,7 +72,7 @@ const Sidebar = () => {
             return (
               <button
                 key={"footer-" + index}
-                className={`flex items-center justify-center gap-3 px-2 py-4 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
+                className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
               >
                 <Icon className="text-2xl" />
                 <span className="hidden sm:inline">{item.name}</span>
