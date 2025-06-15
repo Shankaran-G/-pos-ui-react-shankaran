@@ -83,7 +83,7 @@ const Searchbar = ({ onAddProductClick }) => {
 
         <Button
           onClick={onAddProductClick}
-          className="bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white"
+          className="bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white  cursor-pointer"
         >
           <FaPlus /> Add Products
         </Button>
@@ -142,7 +142,7 @@ const Searchbar = ({ onAddProductClick }) => {
         <div className="flex justify-end w-auto flex-shrink-0">
           <Button
             onClick={handleRefresh}
-            className="h-[40px] border-2 border-[#2ac97b] text-gray-700 mb-4 px-2 py-2 rounded-md"
+            className="h-[40px] border-2 border-[#2ac97b] text-gray-700 mb-4 px-2 py-2 rounded-md cursor-pointer"
           >
             <FaSyncAlt className="text-green-500" /> Refresh
           </Button>

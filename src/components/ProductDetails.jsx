@@ -9,7 +9,7 @@ const ProductDetails = ({ product, onClose }) => {
       <div className="bg-white  border-4 border-green-500 rounded-lg p-6 w-full max-w-md relative shadow-lg">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 cursor-pointer"
           aria-label="Close modal"
         >
           <FaTimes size={20} />
@@ -53,7 +53,7 @@ const ProductDetails = ({ product, onClose }) => {
         <div className="mt-6 flex justify-end gap-3">
           <Button
             onClick={onClose}
-            className="absolute bottom-4 right-4 bg-red-500 text-white hover:bg-red-600"
+            className="absolute bottom-4 right-4 bg-red-500 text-white hover:bg-red-600 cursor-pointer"
             aria-label="Close"
           >
             Close
