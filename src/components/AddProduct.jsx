@@ -9,7 +9,7 @@ const AddProduct = ({ onClose }) => {
           <h2 className="text-xl font-semibold text-gray-700">
             Add New Product
           </h2>
-          <button className="text-sm bg-gradient-to-r from-[#f54a3b] to-[#f48c55] text-white px-3 py-2 rounded-2xl font-medium">
+          <button className="text-sm bg-gradient-to-r from-[#f54a3b] to-[#f48c55] text-white px-3 py-2 rounded-2xl font-medium cursor-pointer">
             Scan Barcode
           </button>
         </div>
@@ -145,7 +145,7 @@ const AddProduct = ({ onClose }) => {
           <Button
             onClick={() => {}}
             aria-label="Refresh"
-            className="flex items-center text-green-500 border border-green-500"
+            className="flex items-center text-green-500 border border-green-500 cursor-pointer"
             type="button"
           >
             <FaSyncAlt className="mr-2 text-lg" />
@@ -155,14 +155,14 @@ const AddProduct = ({ onClose }) => {
             onClick={() => {
               onClose();
             }}
-            className="text-sm text-red-700 border border-red-700 hover:bg-red-300"
+            className="text-sm text-red-700 border border-red-700 hover:bg-red-300 cursor-pointer"
           >
             Cancel
           </Button>
 
           <Button
             type="submit"
-            className="text-sm bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white"
+            className="text-sm bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white cursor-pointer"
           >
             Add Product
           </Button>
