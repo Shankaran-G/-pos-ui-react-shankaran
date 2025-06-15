@@ -1,4 +1,5 @@
 import { FaUpload, FaSyncAlt, FaAngleRight } from "react-icons/fa";
+import Button from "./Button";
 
 const AddProduct = ({ onClose }) => {
   return (
@@ -141,28 +142,30 @@ const AddProduct = ({ onClose }) => {
         </div>
 
         <div className="flex justify-end items-center gap-4 mt-6">
-          <button
-            className="flex items-center px-4 py-2 text-green-500 rounded-md transition duration-200"
+          <Button
+            onClick={() => {}}
             aria-label="Refresh"
+            className="flex items-center text-green-500 border border-green-500"
             type="button"
           >
             <FaSyncAlt className="mr-2 text-lg" />
-          </button>
-          <button
+          </Button>
+
+          <Button
             onClick={() => {
-              console.log("Cancel button clicked");
               onClose();
             }}
-            className="flex items-center text-sm text-red-700 border border-red-700 px-4 py-2 rounded hover:bg-red-300"
+            className="text-sm text-red-700 border border-red-700 hover:bg-red-300"
           >
             Cancel
-          </button>
-          <button
+          </Button>
+
+          <Button
             type="submit"
-            className="text-sm bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-6 py-2 rounded"
+            className="text-sm bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white"
           >
             Add Product
-          </button>
+          </Button>
         </div>
       </div>
     </div>
