@@ -27,7 +27,7 @@ const ProductTable = () => {
   return (
     <>
       <div className="bg-white rounded shadow p-4 border border-gray-300 w-full max-w-full">
-        <div className="overflow-y-auto max-h-[500px]">
+        <div className="overflow-y-auto max-h-[450px]">
           <table className="min-w-full text-base text-left">
             <thead className="sticky top-0 bg-white z-10">
               <tr className="font-bold">
@@ -65,7 +65,7 @@ const ProductTable = () => {
                   <td className="p-3">{product.price}</td>
                   <td className="p-3">
                     <span
-                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap max-w-[100px] overflow-hidden overflow-ellipsis block ${getStockBorderTextColor(
+                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap ${getStockBorderTextColor(
                         product.store
                       )}`}
                       title={
@@ -81,7 +81,7 @@ const ProductTable = () => {
                   </td>
                   <td className="p-3">
                     <span
-                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap max-w-[100px] overflow-hidden overflow-ellipsis block ${getStockBorderTextColor(
+                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap ${getStockBorderTextColor(
                         product.warehouse
                       )}`}
                     >
