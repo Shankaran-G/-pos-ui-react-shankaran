@@ -65,9 +65,14 @@ const ProductTable = () => {
                   <td className="p-3">{product.price}</td>
                   <td className="p-3">
                     <span
-                      className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
+                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap max-w-[100px] overflow-hidden overflow-ellipsis block ${getStockBorderTextColor(
                         product.store
                       )}`}
+                      title={
+                        typeof product.store === "number"
+                          ? `${product.store} in Stock`
+                          : product.store
+                      }
                     >
                       {typeof product.store === "number"
                         ? `${product.store} in Stock`
@@ -76,7 +81,7 @@ const ProductTable = () => {
                   </td>
                   <td className="p-3">
                     <span
-                      className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
+                      className={`px-2 py-0.5 rounded-full border text-xs md:text-sm font-medium whitespace-nowrap max-w-[100px] overflow-hidden overflow-ellipsis block ${getStockBorderTextColor(
                         product.warehouse
                       )}`}
                     >
