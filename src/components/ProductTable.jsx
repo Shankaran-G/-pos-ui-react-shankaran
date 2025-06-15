@@ -46,7 +46,11 @@ const ProductTable = () => {
               {mockData.map((product, index) => (
                 <tr
                   key={index}
-                  className="border-t-3 border-gray-400 hover:bg-green-200 transition duration-200"
+                  className={`border-t-3 border-gray-400 hover:bg-green-200 transition duration-200 ${
+                    selectedProduct && selectedProduct.code === product.code
+                      ? "bg-green-300"
+                      : ""
+                  }`}
                 >
                   <td className="p-3">
                     <div className="flex items-center gap-3">
