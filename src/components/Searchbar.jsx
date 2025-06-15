@@ -1,6 +1,6 @@
 import { FaSearch, FaAngleRight, FaPlus, FaSyncAlt } from "react-icons/fa";
 
-const Searchbar = ({ onRefresh }) => {
+const Searchbar = ({ onRefresh, onAddProductClick }) => {
   return (
     <div className="w-full px-6 pt-0 space-y-6">
       <div className="flex flex-wrap md:flex-nowrap gap-4 items-end w-full">
@@ -30,7 +30,10 @@ const Searchbar = ({ onRefresh }) => {
           </div>
         </div>
 
-        <button className="flex items-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-3 md:px-4 py-1 md:py-2 rounded-xl text-xs md:text-sm whitespace-nowrap">
+        <button
+          onClick={onAddProductClick}
+          className="flex items-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-3 md:px-4 py-1 md:py-2 rounded-xl text-xs md:text-sm whitespace-nowrap"
+        >
           <FaPlus /> Add Products
         </button>
       </div>

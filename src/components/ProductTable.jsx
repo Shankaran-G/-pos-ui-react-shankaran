@@ -1,27 +1,6 @@
 import { FaEdit } from "react-icons/fa";
-
-const mockData = [
-  {
-    name: "Product A",
-    code: "P001",
-    barcode: "123456789",
-    category: "Steel",
-    tax: "15%",
-    price: "$120",
-    store: 200,
-    warehouse: 150,
-  },
-  {
-    name: "Product B",
-    code: "P002",
-    barcode: "987654321",
-    category: "Wood",
-    tax: "10%",
-    price: "$80",
-    store: 45,
-    warehouse: 20,
-  },
-];
+import mockData from "../assets/mockdata.js";
+import mobileImage from "../assets/iphone.png";
 
 const getStockBorderTextColor = (value) => {
   if (value === "Not Available") return "border-red-500 text-red-600";
@@ -34,68 +13,76 @@ const getStockBorderTextColor = (value) => {
 };
 
 const ProductTable = ({ onEdit }) => (
-  <div className="overflow-x-auto bg-white rounded shadow p-4 border-1 border-gray-300">
-    <table className="min-w-full text-base text-left">
-      <thead>
-        <tr className="bg-white font-bold">
-          <th className="p-3 capitalize">Products</th>
-          <th className="p-3 capitalize">Product Code</th>
-          <th className="p-3 capitalize">Barcode</th>
-          <th className="p-3 capitalize">Category</th>
-          <th className="p-3 capitalize">Tax</th>
-          <th className="p-3 capitalize">Price</th>
-          <th className="p-3 capitalize pl-8">Store</th>
-          <th className="p-3 capitalize">Warehouse</th>
-          <th className="p-3 capitalize">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {mockData.map((item, i) => (
-          <tr
-            key={i}
-            className="border-t-2 border-gray-400 hover:bg-green-50 transition duration-200"
-          >
-            <td className="p-3">{item.name}</td>
-            <td className="p-3">{item.code}</td>
-            <td className="p-3">{item.barcode}</td>
-            <td className="p-3">{item.category}</td>
-            <td className="p-3">{item.tax}</td>
-            <td className="p-3">{item.price}</td>
-
-            <td className="p-3">
-              <span
-                className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
-                  item.store
-                )}`}
-              >
-                {typeof item.store === "number"
-                  ? `${item.store} in Stock`
-                  : item.store}
-              </span>
-            </td>
-
-            <td className="p-3">
-              <span
-                className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
-                  item.warehouse
-                )}`}
-              >
-                {typeof item.warehouse === "number"
-                  ? `${item.warehouse} in Stock`
-                  : item.warehouse}
-              </span>
-            </td>
-
-            <td className="p-3 flex items-center">
-              <FaEdit
-                className="text-green-500 cursor-pointer ml-5 text-3xl"
-                onClick={() => onEdit(item)}
-              />
-            </td>
+  <div className="bg-white rounded shadow p-4 border border-gray-300 w-full max-w-full">
+    <div className="overflow-y-auto max-h-[600px]">
+      <table className="min-w-full text-base text-left">
+        <thead className="sticky top-0 bg-white z-10">
+          <tr className="font-bold">
+            <th className="p-3 capitalize">Products</th>
+            <th className="p-3 capitalize">Product Code</th>
+            <th className="p-3 capitalize">Barcode</th>
+            <th className="p-3 capitalize">Category</th>
+            <th className="p-3 capitalize">Tax</th>
+            <th className="p-3 capitalize">Price</th>
+            <th className="p-3 capitalize pl-8">Store</th>
+            <th className="p-3 capitalize">Warehouse</th>
+            <th className="p-3 capitalize">Action</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {mockData.map((product, index) => (
+            <tr
+              key={index}
+              className="border-t-3 border-gray-400 hover:bg-green-50 transition duration-200"
+            >
+              <td className="p-3">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={mobileImage}
+                    alt="Product"
+                    className="w-10 h-10 rounded-full border border-gray-300"
+                  />
+                  <span>{product.name}</span>
+                </div>
+              </td>
+              <td className="p-3">{product.code}</td>
+              <td className="p-3">{product.barcode}</td>
+              <td className="p-3">{product.category}</td>
+              <td className="p-3">{product.tax}</td>
+              <td className="p-3">{product.price}</td>
+              <td className="p-3">
+                <span
+                  className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
+                    product.store
+                  )}`}
+                >
+                  {typeof product.store === "number"
+                    ? `${product.store} in Stock`
+                    : product.store}
+                </span>
+              </td>
+              <td className="p-3">
+                <span
+                  className={`px-3 py-1 rounded-full border text-sm font-medium ${getStockBorderTextColor(
+                    product.warehouse
+                  )}`}
+                >
+                  {typeof product.warehouse === "number"
+                    ? `${product.warehouse} in Stock`
+                    : product.warehouse}
+                </span>
+              </td>
+              <td className="p-3 flex items-center">
+                <FaEdit
+                  className="text-green-500 cursor-pointer ml-5 text-3xl"
+                  onClick={() => onEdit(product)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 );
 
