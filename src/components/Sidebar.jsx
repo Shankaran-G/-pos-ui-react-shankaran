@@ -40,7 +40,7 @@ const Sidebar = () => {
           <span className="font-semibold text-sm hidden md:inline">HOME</span>
         </button>
 
-        <ul className="flex flex-col space-y-1">
+        <ul className="flex flex-col">
           {sections.map((item, index) => {
             const Icon = item.icon;
             const isActive = item.name === "Products";
@@ -66,21 +66,20 @@ const Sidebar = () => {
             );
           })}
         </ul>
-      </div>
-
-      <div className="mt-auto flex flex-col space-y-1">
-        {footer.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <button
-              key={"footer-" + index}
-              className={`flex items-center justify-center gap-3 px-2 py-4 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
-            >
-              <Icon className="text-2xl" />
-              <span className="hidden sm:inline">{item.name}</span>
-            </button>
-          );
-        })}
+        <div className="mt-auto flex flex-col">
+          {footer.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={"footer-" + index}
+                className={`flex items-center justify-center gap-3 px-2 py-4 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
+              >
+                <Icon className="text-2xl" />
+                <span className="hidden sm:inline">{item.name}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
