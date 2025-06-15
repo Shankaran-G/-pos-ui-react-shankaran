@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaPlus, FaSyncAlt } from "react-icons/fa";
 import mockData from "../assets/mockdata.js";
 import Button from "./Button.jsx";
-import DropdownInput from "./DropDownInput.jsx";
+import DropdownInput from "./DropdownInput.jsx";
 import SearchInput from "./SearchInput.jsx";
 import FilterInput from "./FilterInput.jsx";
 

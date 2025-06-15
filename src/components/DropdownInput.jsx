@@ -8,7 +8,6 @@ const DropdownInput = ({
   onSelect,
   isOpen,
   onToggle,
-  readOnly = true,
 }) => (
   <div className="flex flex-col md:flex-row items-start md:items-end gap-1 flex-grow min-w-[160px] relative">
     <label className="text-xs md:text-sm font-semibold text-gray-500 whitespace-nowrap mb-1 md:mb-2">
@@ -19,7 +18,7 @@ const DropdownInput = ({
         type="text"
         value={value}
         placeholder={placeholder}
-        readOnly={readOnly}
+        readOnly={true}
         className="w-full pr-10 pl-3 py-1 md:py-2 border rounded text-xs md:text-sm text-gray-700 cursor-pointer"
       />
       {isOpen ? (
