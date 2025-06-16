@@ -145,7 +145,7 @@ const AddProduct = ({ onClose }) => {
           <Button
             onClick={() => {}}
             aria-label="Refresh"
-            className="flex items-center text-green-500 border border-green-500 cursor-pointer"
+            className="flex items-center text-green-500 cursor-pointer"
             type="button"
           >
             <FaSyncAlt className="mr-2 text-lg" />
