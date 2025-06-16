@@ -30,24 +30,21 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col min-h-screen max-h-screen overflow-hidden shadow">
-      {/* HEADER */}
+    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col h-screen shadow overflow-hidden">
       <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
         POS SHANKARAN
       </h1>
 
-      {/* HOME BUTTON */}
       <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
         <FaHome className="text-lg sm:text-lg md:text-lg" />
         <span className="font-semibold text-sm hidden md:inline">HOME</span>
       </button>
 
-      {/* SCROLLABLE SECTION MENU */}
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="flex-1 overflow-auto">
         <ul className="flex flex-col">
           {sections.map((item, index) => {
             const Icon = item.icon;
-            const isActive = item.name === "Products"; // example
+            const isActive = item.name === "Products";
             return (
               <li
                 key={index}
@@ -72,8 +69,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      {/* FOOTER BUTTONS */}
-      <div className="mt-4 flex flex-col gap-2">
+      <div className="mt-auto flex flex-col gap-2">
         {footer.map((item, index) => {
           const Icon = item.icon;
           return (
