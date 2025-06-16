@@ -27,7 +27,7 @@ const ProductTable = () => {
   return (
     <>
       <div className="bg-white rounded shadow p-4 border border-gray-300 w-full max-w-full">
-        <div className="overflow-y-auto max-h-[450px]">
+        <div className="overflow-y-auto max-h-[500px]">
           <table className="min-w-full text-base text-left">
             <thead className="sticky top-0 bg-white z-10">
               <tr className="font-bold">

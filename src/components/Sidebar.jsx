@@ -25,23 +25,23 @@ const Sidebar = () => {
 
   const footer = [
     { name: "Exit", icon: FaSignOutAlt, color: "text-red-500" },
-    { name: "Help", icon: FaQuestionCircle, color: "text-gray-500" },
+    { name: "Help", icon: FaQuestionCircle, color: "text-gray-700" },
   ];
 
   return (
-    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col h-screen overflow-hidden shadow-md lg:shadow-xl border-r border-gray-200">
+    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-3 flex flex-col h-screen overflow-hidden shadow-md border-r border-gray-200">
       <div className="flex flex-col h-screen justify-between">
-        <div>
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold mb-6 hidden lg:block tracking-wide">
+        <div className="flex flex-col flex-grow-0">
+          <h1 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 hidden lg:block tracking-wide">
             POS SHANKARAN
           </h1>
 
-          <button className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8 text-sm md:text-base lg:text-lg font-semibold shadow-lg hover:shadow-none transition-shadow duration-200">
-            <FaHome className="text-lg sm:text-lg md:text-xl lg:text-2xl" />
+          <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-3 py-1.5 rounded-full w-full mb-6 text-sm md:text-base font-semibold shadow-sm hover:shadow-none transition-shadow duration-200">
+            <FaHome className="text-base md:text-lg lg:text-xl" />
             <span className="hidden md:inline">HOME</span>
           </button>
 
-          <ul className="flex flex-col">
+          <ul className="flex flex-col gap-2">
             {sections.map((item, index) => {
               const Icon = item.icon;
               const isActive = item.name === "Products";
@@ -50,10 +50,10 @@ const Sidebar = () => {
                   key={index}
                   className={`flex flex-col items-center gap-1 group ${
                     isActive ? "text-[#2ac97b]" : "text-gray-500"
-                  } hover:text-[#2ac97b] cursor-pointer transition-colors duration-200 py-3 lg:py-4`}
+                  } hover:text-[#2ac97b] cursor-pointer transition-colors duration-200 py-2`}
                 >
                   <Icon
-                    className={`text-lg sm:text-xl md:text-2xl lg:text-3xl transition-transform duration-200 group-hover:scale-110 ${
+                    className={`text-base sm:text-lg md:text-xl lg:text-2xl transition-transform duration-200 group-hover:scale-110 ${
                       isActive ? "text-[#2ac97b]" : ""
                     }`}
                   />
@@ -61,7 +61,7 @@ const Sidebar = () => {
                     {item.name}
                   </div>
                   <hr
-                    className={`w-10 sm:w-20 lg:w-30 mt-1 border-t-2 transition-colors duration-200 ${
+                    className={`w-10 sm:w-20 lg:w-28 mt-1 border-t-2 transition-colors duration-200 ${
                       isActive
                         ? "border-[#2ac97b]"
                         : "border-gray-300 group-hover:border-[#2ac97b]"
@@ -73,7 +73,7 @@ const Sidebar = () => {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-1 mb-10">
+        <div className="flex flex-col gap-1 mb-6 flex-grow-0">
           {footer.map((item, index) => {
             const Icon = item.icon;
             return (
