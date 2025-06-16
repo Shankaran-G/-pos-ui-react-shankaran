@@ -10,6 +10,7 @@ import {
   FaSignOutAlt,
   FaQuestionCircle,
 } from "react-icons/fa";
+import "../App.css";
 
 const Sidebar = () => {
   const sections = [
@@ -29,20 +30,18 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-3 sm:p-4 md:p-5 flex flex-col justify-between h-screen shadow">
-      <div>
-        <h1 className="text-base md:text-xl lg:text-2xl font-bold mb-4 hidden lg:block text-center">
-          POS SHANKARAN
-        </h1>
+    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col min-h-screen max-h-screen overflow-hidden shadow">
+      <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
+        POS SHANKARAN
+      </h1>
 
-        <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full w-full mb-4">
-          <FaHome className="text-sm sm:text-base md:text-lg" />
-          <span className="font-semibold text-xs sm:text-sm hidden md:inline">
-            HOME
-          </span>
-        </button>
+      <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
+        <FaHome className="text-lg sm:text-lg md:text-lg" />
+        <span className="font-semibold text-sm hidden md:inline">HOME</span>
+      </button>
 
-        <ul className="flex flex-col gap-2">
+      <div className="flex-1 overflow-y-auto no-scrollbar">
+        <ul className="flex flex-col">
           {sections.map((item, index) => {
             const Icon = item.icon;
             const isActive = item.name === "Products";
@@ -51,14 +50,14 @@ const Sidebar = () => {
                 key={index}
                 className={`flex flex-col items-center gap-1 group ${
                   isActive ? "text-[#2ac97b]" : "text-gray-500"
-                } hover:text-[#2ac97b] cursor-pointer transition-colors duration-200 py-2`}
+                } hover:text-[#2ac97b] cursor-pointer transition-colors duration-200 py-3`}
               >
-                <Icon className="text-base sm:text-lg md:text-xl" />
-                <div className="text-[10px] sm:text-xs md:text-sm hidden sm:block text-center font-medium">
+                <Icon className="text-lg sm:text-xl md:text-2xl" />
+                <div className="text-xs md:text-sm font-medium text-center hidden sm:block">
                   {item.name}
                 </div>
                 <hr
-                  className={`w-12 sm:w-20 md:w-28 lg:w-32 border-t-2 ${
+                  className={`w-10 sm:w-20 lg:w-30 mt-1 border-t-2 transition-colors duration-200 ${
                     isActive
                       ? "border-[#2ac97b]"
                       : "border-gray-300 group-hover:border-[#2ac97b]"
@@ -70,15 +69,15 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="mt-4 flex flex-col gap-2">
         {footer.map((item, index) => {
           const Icon = item.icon;
           return (
             <button
               key={"footer-" + index}
-              className={`flex items-center justify-center gap-2 px-2 py-2 ${item.color} text-sm sm:text-base font-medium hover:opacity-80 transition`}
+              className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
             >
-              <Icon className="text-base sm:text-lg" />
+              <Icon className="text-2xl" />
               <span className="hidden sm:inline">{item.name}</span>
             </button>
           );
