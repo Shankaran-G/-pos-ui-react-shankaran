@@ -10,7 +10,6 @@ import {
   FaSignOutAlt,
   FaQuestionCircle,
 } from "react-icons/fa";
-import "../App.css";
 
 const Sidebar = () => {
   const sections = [
@@ -30,17 +29,17 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col min-h-screen max-h-screen overflow-hidden shadow">
-      <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
-        POS SHANKARAN
-      </h1>
+    <div className="h-screen sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col shadow">
+      <div className="flex-grow flex flex-col">
+        <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
+          POS SHANKARAN
+        </h1>
 
-      <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
-        <FaHome className="text-lg sm:text-lg md:text-lg" />
-        <span className="font-semibold text-sm hidden md:inline">HOME</span>
-      </button>
+        <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
+          <FaHome className="text-lg sm:text-lg md:text-lg" />
+          <span className="font-semibold text-sm hidden md:inline">HOME</span>
+        </button>
 
-      <div className="flex-1 overflow-y-auto no-scrollbar">
         <ul className="flex flex-col">
           {sections.map((item, index) => {
             const Icon = item.icon;
@@ -69,7 +68,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="mt-4 flex flex-col gap-2">
+      <div className="flex flex-col gap-2 mt-5">
         {footer.map((item, index) => {
           const Icon = item.icon;
           return (
