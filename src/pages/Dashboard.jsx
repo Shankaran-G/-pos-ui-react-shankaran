@@ -9,16 +9,16 @@ function Dashboard() {
   const [addProductPopup, setAddProductPopup] = useState(false);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
 
       <div className="flex-1 flex flex-col overflow-hidden">
         <Topbar />
 
-        <div className="flex-1 overflow-hidden p-4">
+        <div className="flex-1 overflow-auto p-4">
           <Searchbar onAddProductClick={() => setAddProductPopup(true)} />
 
-          <div className="mt-6 overflow-hidden">
+          <div className="mt-6">
             <ProductTable />
           </div>
         </div>
