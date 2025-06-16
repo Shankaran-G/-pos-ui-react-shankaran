@@ -7,22 +7,27 @@ import AddProduct from "../components/AddProduct";
 
 function Dashboard() {
   const [addProductPopup, setAddProductPopup] = useState(false);
+
   return (
-    <div className="flex">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
-      <div className="flex-1 flex flex-col">
+
+      <div className="flex-1 flex flex-col overflow-hidden">
         <Topbar />
-        <div className="p-4">
+
+        <div className="flex-1 overflow-auto p-4">
           <Searchbar onAddProductClick={() => setAddProductPopup(true)} />
+
           <div className="mt-6">
             <ProductTable />
           </div>
-          {addProductPopup && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center">
-              <AddProduct onClose={() => setAddProductPopup(false)} />
-            </div>
-          )}
         </div>
+
+        {addProductPopup && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+            <AddProduct onClose={() => setAddProductPopup(false)} />
+          </div>
+        )}
       </div>
     </div>
   );

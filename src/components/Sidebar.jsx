@@ -10,6 +10,7 @@ import {
   FaSignOutAlt,
   FaQuestionCircle,
 } from "react-icons/fa";
+import "../App.css";
 
 const Sidebar = () => {
   const sections = [
@@ -29,21 +30,24 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col max-h-screen shadow">
-      <div>
-        <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
-          POS SHANKARAN
-        </h1>
+    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col min-h-screen max-h-screen overflow-hidden shadow">
+      {/* HEADER */}
+      <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
+        POS SHANKARAN
+      </h1>
 
-        <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
-          <FaHome className="text-lg sm:text-lg md:text-lg" />
-          <span className="font-semibold text-sm hidden md:inline">HOME</span>
-        </button>
+      {/* HOME BUTTON */}
+      <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#39e28e] to-[#12a55e] text-white px-4 py-2 sm:px-3 md:px-4 rounded-full w-full mb-8">
+        <FaHome className="text-lg sm:text-lg md:text-lg" />
+        <span className="font-semibold text-sm hidden md:inline">HOME</span>
+      </button>
 
+      {/* SCROLLABLE SECTION MENU */}
+      <div className="flex-1 overflow-y-auto no-scrollbar">
         <ul className="flex flex-col">
           {sections.map((item, index) => {
             const Icon = item.icon;
-            const isActive = item.name === "Products";
+            const isActive = item.name === "Products"; // example
             return (
               <li
                 key={index}
@@ -66,20 +70,22 @@ const Sidebar = () => {
             );
           })}
         </ul>
-        <div className="mt-auto flex flex-col">
-          {footer.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <button
-                key={"footer-" + index}
-                className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
-              >
-                <Icon className="text-2xl" />
-                <span className="hidden sm:inline">{item.name}</span>
-              </button>
-            );
-          })}
-        </div>
+      </div>
+
+      {/* FOOTER BUTTONS */}
+      <div className="mt-4 flex flex-col gap-2">
+        {footer.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <button
+              key={"footer-" + index}
+              className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
+            >
+              <Icon className="text-2xl" />
+              <span className="hidden sm:inline">{item.name}</span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
