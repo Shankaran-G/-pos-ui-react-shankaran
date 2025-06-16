@@ -29,8 +29,8 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-screen sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col shadow">
-      <div className="flex-grow flex flex-col">
+    <div className="sm:w-24 md:w-32 lg:w-64 bg-white text-gray-700 p-5 flex flex-col max-h-screen shadow">
+      <div>
         <h1 className="text-xl md:text-2xl font-bold mb-6 hidden lg:block">
           POS SHANKARAN
         </h1>
@@ -66,21 +66,20 @@ const Sidebar = () => {
             );
           })}
         </ul>
-      </div>
-
-      <div className="flex flex-col gap-2 mt-5">
-        {footer.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <button
-              key={"footer-" + index}
-              className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
-            >
-              <Icon className="text-2xl" />
-              <span className="hidden sm:inline">{item.name}</span>
-            </button>
-          );
-        })}
+        <div className="mt-auto flex flex-col">
+          {footer.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={"footer-" + index}
+                className={`flex items-center justify-center gap-3 px-2 py-3 cursor-pointer ${item.color} text-xl font-semibold hover:opacity-80 transition-opacity duration-200 rounded`}
+              >
+                <Icon className="text-2xl" />
+                <span className="hidden sm:inline">{item.name}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
